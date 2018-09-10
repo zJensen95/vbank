@@ -54,7 +54,7 @@ gulp.task('useref', function(){
 
 gulp.task('browserSync', function() {
 	browserSync.init({
-		proxy: "http://localhost:8888/osocp/web"
+		proxy: "http://localhost/vbank/web"
 	});
 });
 
