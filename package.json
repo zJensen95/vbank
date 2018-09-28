@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "foundation-sites": "^6.4.3",
-    "fullpage.js": "^2.9.7",
-    "gulp-autoprefixer": "^3.1.1",
+    "foundation-sites": "^6.5.0-rc.3",
+    "fullpage.js": "^3.0.3",
+    "gulp-autoprefixer": "^6.0.0",
     "jquery": "^3.3.1",
-    "motion-ui": "^1.2.3",
+    "motion-ui": "^2.0.3",
     "scrollmagic": "^2.0.5",
-    "what-input": "^4.3.1"
+    "what-input": "^5.1.2"
   },
   "devDependencies": {
     "browser-sync": "^2.23.6",
@@ -22,7 +22,7 @@
     "gulp-imagemin": "^4.1.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^2.3.2",
+    "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "gulp-useref": "^3.1.5",
