@@ -1,0 +1,24 @@
+/*
+	
+	Stylesheet for Vbank
+	
+*/
+@font-face {
+  font-family: 'ostrich';
+  src: url("../fonts/OstrichSans-Heavy.otf"); }
+
+@font-face {
+  font-family: 'futura';
+  src: url("../fonts/FuturaStd-Book.otf"); }
+
+@font-face {
+  font-family: 'futura';
+  src: url("../fonts/FuturaStd-Medium.otf");
+  font-weight: 500; }
+
+@font-face {
+  font-family: "futura";
+  src: url("../fonts/FuturaStd-Bold.otf");
+  font-weight: 700; }
+
+/*# sourceMappingURL=fonts.css.map */

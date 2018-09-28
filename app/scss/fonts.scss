@@ -1,0 +1,35 @@
+/*
+	
+	Stylesheet for Vbank
+	
+*/
+
+// -------- Ostrich Black -------- //
+
+// Heavy
+@font-face {
+	font-family: 'ostrich';
+	src: url('../fonts/OstrichSans-Heavy.otf');
+}
+
+// -------- Futura -------- //
+
+// Book
+@font-face {
+	font-family: 'futura';
+	src: url('../fonts/FuturaStd-Book.otf');
+}
+
+// Medium
+@font-face {
+	font-family: 'futura';
+	src: url('../fonts/FuturaStd-Medium.otf');
+	font-weight: 500;
+}
+
+// Bold
+@font-face {
+	font-family: "futura";
+	src: url('../fonts/FuturaStd-Bold.otf');
+	font-weight: 700;
+}

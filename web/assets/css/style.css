@@ -1,0 +1,166 @@
+/*
+	
+	Stylesheet for vBank
+	
+*/
+@import url(fonts.css);
+@import url(foundation.min.css);
+/*
+	
+	Typography
+	
+	Header One - Strictly for top level headers
+	e.g Banners, big sections
+	
+	Header Two - Header for larger sections and subheader for h1
+	
+	Header Three - Header for short sections and as a subheader for h2
+	
+	Header Four - Used in navigation and for buttons
+	
+*/
+h1 {
+  font-family: "ostrich", sans-serif;
+  font-size: 3.75rem;
+  line-height: 1em;
+  letter-spacing: .03em; }
+
+h2 {
+  font-family: "futura";
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2em;
+  letter-spacing: .086em;
+  text-transform: uppercase; }
+
+h3 {
+  font-family: "futura";
+  font-size: 1.125em;
+  font-weight: 500;
+  line-height: 1.2em;
+  letter-spacing: .086em;
+  text-transform: uppercase; }
+
+h4 {
+  font-family: "futura";
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.2em;
+  letter-spacing: .086em; }
+
+p, a {
+  font-family: "futura";
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 2em;
+  letter-spacing: .086em; }
+
+h1, h2, h3, h4, h5, h6, p, a {
+  margin: 0px;
+  padding: 0px; }
+  h1.book, h2.book, h3.book, h4.book, h5.book, h6.book, p.book, a.book {
+    font-weight: 400; }
+  h1.medium, h2.medium, h3.medium, h4.medium, h5.medium, h6.medium, p.medium, a.medium {
+    font-weight: 500; }
+  h1.bold, h2.bold, h3.bold, h4.bold, h5.bold, h6.bold, p.bold, a.bold {
+    font-weight: 700; }
+  h1.green, h2.green, h3.green, h4.green, h5.green, h6.green, p.green, a.green {
+    color: #82ce20; }
+  h1.light-grey, h2.light-grey, h3.light-grey, h4.light-grey, h5.light-grey, h6.light-grey, p.light-grey, a.light-grey {
+    color: #666; }
+  h1.white, h2.white, h3.white, h4.white, h5.white, h6.white, p.white, a.white {
+    color: #fff; }
+
+/*
+	
+	General
+	
+*/
+main {
+  min-height: calc(100vh - 124px); }
+
+.inline-block {
+  display: inline-block; }
+
+.view-height {
+  min-height: calc(100vh - 124px); }
+
+.line-after {
+  position: relative;
+  display: inline-block; }
+  .line-after:after {
+    display: block;
+    content: "";
+    position: absolute;
+    right: -100%;
+    top: 50%;
+    background: #82ce20;
+    width: 80%;
+    min-width: 200px;
+    height: 3px;
+    border-radius: 1000px;
+    transform: translateY(-50%); }
+
+.grid-container {
+  max-width: 90em;
+  margin: 0 auto; }
+
+a {
+  color: #000; }
+
+.button {
+  display: inline-block;
+  min-width: 120px;
+  padding: 10px 30px;
+  background: #82ce20;
+  border: 3px solid #82ce20;
+  color: #fff;
+  border-radius: 1000px;
+  line-height: 1em;
+  text-align: center; }
+  .button.outline {
+    background: transparent;
+    border: 3px solid #82ce20;
+    color: #82ce20; }
+
+header {
+  padding: 20px 2vw; }
+  header .logo {
+    width: 140px; }
+  header a {
+    margin-left: 5vw; }
+  header .button {
+    margin-left: 0px; }
+
+footer {
+  background: #82ce20;
+  padding: 10px 2vw; }
+  footer .logo {
+    width: 90px; }
+
+/*
+	
+	Pages
+	
+*/
+.homepage-banner h1 {
+  padding-top: 40px;
+  padding-bottom: 15px; }
+
+.homepage-banner p, .homepage-banner a {
+  padding-bottom: 50px; }
+
+.homepage-banner a {
+  padding-bottom: 10px; }
+
+.homepage-accounts {
+  padding-bottom: 50px; }
+  .homepage-accounts .item {
+    max-width: 75px;
+    text-align: center; }
+    .homepage-accounts .item img {
+      display: inline-block;
+      height: 40px;
+      margin-bottom: 20px; }
+
+/*# sourceMappingURL=style.css.map */

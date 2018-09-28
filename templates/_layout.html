@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#a55f41"/>
+	
+	<title>{% if title is defined %}{{ title  }} | {% endif %}{{ siteName }}</title>
+	
+	<link rel="shortcut icon" href="{{ siteUrl }}_assets/images/favicon.png" type="image/x-icon">
+	
+	<!-- Stylesheet -->
+	<link href="{{ siteUrl }}assets/css/foundation.min.css" rel="stylesheet"/>
+	<link href="assets/css/font.css" rel="stylesheet"/>
+	<link href="{{ siteUrl }}assets/css/style.css" rel="stylesheet"/>
+	
+	<!-- Scripts -->
+	<script src="{{ siteUrl }}assets/js/jquery.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+{% block head %}
+
+{% endblock %}
+
+</head>
+<body>
+	
+	<header>
+		<div class="grid-x align-justify">
+			<div class="shrink cell">
+				<img class="logo" src="assets/icons/logo.svg" />
+			</div>
+			<div class="auto cell">
+				<a href="{{ siteUrl }}accounts">Accounts</a>
+				<a href="{{ siteUrl }}blog">Blog</a>
+				<a href="{{ siteUrl }}about">About</a>
+				<a href="{{ siteUrl }}help">Help</a>
+			</div>
+			<div class="shrink cell">
+				<a class="button outline" href="#">Login</a>
+			</div>
+		</div>
+	</header>
+	<main>
+		{% block content %}
+		<h1>Your craft is not set up properly</h1>
+		{% endblock %}
+	</main>
+	<footer>
+		<div class="grid-x align-justify">
+			<div class="shrink cell">
+				<img class="logo" src="assets/icons/logo-white.svg" />
+			</div>
+			<div class="auto cell">
+				<p class="text-right white">©2018 Vbank, All Rights Reserved</p>
+			</div>
+		</div>
+	</footer>
+	
+<script src="{{ siteUrl }}assets/js/foundation.min.js"></script>
+<script src="{{ siteUrl }}assets/js/what-input.min.js"></script>
+<script src="{{ siteUrl }}assets/js/script.js"></script>
+</script>
+</body>
+</html>
