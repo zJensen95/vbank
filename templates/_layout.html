@@ -16,7 +16,8 @@
 	<link href="{{ siteUrl }}assets/css/style.css" rel="stylesheet"/>
 	
 	<!-- Scripts -->
-	<script src="{{ siteUrl }}assets/js/jquery.min.js"></script>
+	<script src="{{ siteUrl }}assets/js/jquery.js"></script>
+	<script src="{{ siteUrl }}assets/js/masonry.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 {% block head %}
 
@@ -41,7 +42,7 @@
 			</div>
 		</div>
 	</header>
-	<main>
+	<main class="{{ entry.slug }}">
 		{% block content %}
 		<h1>Your craft is not set up properly</h1>
 		{% endblock %}

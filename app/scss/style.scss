@@ -8,7 +8,8 @@
 @import 'foundation.min.css';
 
 $green: #82ce20;
-$light-grey: #666;
+$grey: #666;
+$light-grey: #f1f2f2;
 
 
 
@@ -93,12 +94,23 @@ h1, h2, h3, h4, h5, h6, p {
 		font-weight: 700;
 	}
 	
+	// Styles
+	&.lowercase {
+		text-transform: none;
+	}
+	&.uppercase {
+		text-transform: uppercase;
+	}
+	
 	// Colors
 	&.green {
 		color: $green;
 	}
+	&.grey {
+		color: $grey;
+	}
 	&.light-grey {
-		color: $light-grey;
+		color: #b3b3b3;
 	}
 	&.white {
 		color: #fff;
@@ -117,6 +129,31 @@ main {
 	min-height: calc(100vh - 124px);
 }
 
+section {
+	padding: 60px 0px;
+	
+	&:first-of-type {
+		padding-top: 120px;
+	}
+	&:last-of-type {
+		padding-bottom: 120px;
+	}
+	
+	&.grey {
+		background: $light-grey;
+		padding: 120px 0px;
+	}
+	&.full-pb {
+		padding-bottom: 120px;
+	}
+}
+
+// Banner
+
+.banner {
+	padding-top: 120px;
+}
+
 // Display
 .inline-block {
 	display: inline-block;
@@ -125,6 +162,14 @@ main {
 // Height
 .view-height {
 	min-height: calc(100vh - 124px);
+}
+
+// -------- Utility --------//
+
+.bg-image {
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .line-after {
@@ -145,6 +190,24 @@ main {
 		transform: translateY(-50%);
 	}
 }
+
+.line-under {
+	position: relative;
+	display: inline-block;
+	
+	&:after {
+		display: block;
+		content: "";
+		position: absolute;
+			bottom: 0;
+			left: 0;
+		width: 100%;
+		height: 1px;
+		background: $green;
+		border-radius: 1000px;
+	}
+}
+
 
 // -------- Foundation -------- //
 
@@ -240,5 +303,65 @@ footer {
 			height: 40px;
 			margin-bottom: 20px;
 		}
+	}
+}
+
+// -------- About -------- //
+
+.about-banner {
+	h1 {
+		margin-bottom: 50px;
+	}
+	h2 {
+		margin-top: 50px;
+	}
+	p {
+		margin-top: 10px;
+	}
+}
+.join-the-team {
+	.bg-image {
+		height: 320px;
+	}
+	.content {
+		p {
+			margin-top: 40px;
+		}
+	}
+}
+
+//-------- Blog -------- //
+
+.blog-page {
+	.grid-container {
+		max-width: 75rem;
+	}
+}
+.featured-blog-post {
+	
+	.grid-x {
+		border: 1px solid #ccc;
+	}
+	.bg-image {
+		height: 50vh;
+	}
+	.content {
+		padding: 35px;
+		
+		h2 {
+			margin-bottom: 50px;
+			padding-bottom: 50px;
+		}
+		h4.grey {
+			padding-bottom: 5px;
+		}
+	}
+}
+.post {
+	box-shadow: 0px 0px 6px 13px #f3f3f3;
+	
+	.bg-image {
+		width: 100%;
+		height: 200px;
 	}
 }
