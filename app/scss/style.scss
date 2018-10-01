@@ -244,6 +244,29 @@ a {
 	}
 }
 
+// Link
+.link {
+	color: #d0d2d3;
+	text-decoration: underline;
+}
+
+// Text Input
+input[type='text'] {
+	border-radius: 10px;
+	margin-top: 5px;
+	border: 3px solid #e6e6e6;
+	box-shadow: none;
+	outline: none;
+	
+	transition: all .1s ease-out;
+	
+	&:focus {
+		border: 3px solid #d4d4d4;
+		box-shadow: none;
+		outline: none;
+	}
+}
+
 // -------- Header --------//
 
 header {
@@ -364,4 +387,116 @@ footer {
 		width: 100%;
 		height: 200px;
 	}
+}
+
+// -------- Login -------- //
+
+.login {
+	overflow-x: hidden;
+	position: relative;
+	min-height: 100vh;
+	
+	.city-illustration {
+		position: absolute;
+			bottom: -25px;
+			left: 0;
+		width: 100%;
+	}
+	.blimp {
+		animation: travel 30s linear;
+		animation-delay: 0s;
+		animation-iteration-count: infinite;
+		position: absolute;
+			top: 20%;
+			left: 5%;
+		width: 250px;
+	}
+	.cloud-one {
+		animation: float 1.5s ease-in-out;
+		animation-delay: 0s;
+		animation-delay: 15s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		position: absolute;
+			bottom: 35%;
+			left: 15%;
+	}
+	.cloud-two {
+		animation: float 1.8s ease-in-out;
+		animation-delay: 0s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		position: absolute;
+			right: 25%;
+			top: 40%;
+	}
+	.cloud-three {
+		animation: float 2.5s ease-in-out;
+		animation-delay: 0s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		position: absolute;
+			right: 20%;
+			top: 35%;
+	}
+	.space-man {
+		animation: crash 5s linear;
+		animation-iteration-count: infinite;
+		width: 150px;
+		position: absolute;
+		top: -20px;
+		right: 20%;
+		transform-origin: center;
+		
+		transform: rotate(-20deg);
+	}
+}
+.login-form {
+	position: absolute;
+	width: 20%; min-width: 300px; max-width: 500px;
+		top: 40%;
+		left: 50%;
+	
+	transform: translate(-50%, -50%);
+	
+	input {
+		margin-bottom: 20px;
+	}
+	.logo {
+		max-width: 150px;
+		margin-bottom: 40px;
+		margin-left: -5px;
+	}
+	.button {
+		width: 100%;
+		margin-bottom: 10px;
+		margin-top: 20px;
+	}
+}
+
+@keyframes float {
+	0% {transform: translate(2%, 15%);}
+	100% {transform: translate(1%, -15%);}
+}
+@keyframes travel {
+	0% {left: -15%; top: 20%;}
+	25% {left: 25%; top: 10%;}
+	50% {left: 50%; top: 15%;}
+	100% {left: 115%; top: 20%;}
+}
+@keyframes spaceMage {
+	0% {transform: rotate(60deg);}
+	100% {transform: rotate(-180deg);}
+}
+@keyframes crash {
+	0% {top: -20%;}
+	10% {top: -10%; transform: rotate(20deg);}
+	20% {top: 0%;transform: rotate(40deg);}
+	30% {top: 10%; transform: rotate(60deg);}
+	40% {top: 20%; transform: rotate(80deg);}
+	50% {top: 35%; transform: rotate(100deg);}
+	60% {top: 50%; transform: rotate(120deg);}
+	70% {top: 75%; transform: rotate(140deg);}
+	80% {top: 90%; transform: rotate(160deg);}
+	100% {top: 100%; transform: rotate(200deg);}
 }

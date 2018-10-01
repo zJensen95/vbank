@@ -25,7 +25,7 @@
 
 </head>
 <body>
-	
+	{% if entry.slug != "login" %}
 	<header>
 		<div class="grid-x align-justify">
 			<div class="shrink cell">
@@ -38,15 +38,17 @@
 				<a href="{{ siteUrl }}help">Help</a>
 			</div>
 			<div class="shrink cell">
-				<a class="button outline" href="#">Login</a>
+				<a class="button outline" href="{{ siteUrl }}login-page">Login</a>
 			</div>
 		</div>
 	</header>
+	{% endif %}
 	<main class="{{ entry.slug }}">
 		{% block content %}
 		<h1>Your craft is not set up properly</h1>
 		{% endblock %}
 	</main>
+	{% if entry.slug != "login" %}
 	<footer>
 		<div class="grid-x align-justify">
 			<div class="shrink cell">
@@ -57,6 +59,7 @@
 			</div>
 		</div>
 	</footer>
+	{% endif %}
 	
 <script src="{{ siteUrl }}assets/js/foundation.min.js"></script>
 <script src="{{ siteUrl }}assets/js/what-input.min.js"></script>
