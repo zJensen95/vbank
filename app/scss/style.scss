@@ -117,7 +117,18 @@ h1, h2, h3, h4, h5, h6, p {
 	}
 }
 
-
+ul {
+	@extend p;
+	list-style-type: none;
+	
+	li {
+			&:before {
+			content: '—';
+			color: $green;
+			margin: 0px 10px 0px 0px;
+		}	
+	}
+}
 
 /*
 	
@@ -499,4 +510,50 @@ footer {
 	70% {top: 75%; transform: rotate(140deg);}
 	80% {top: 90%; transform: rotate(160deg);}
 	100% {top: 100%; transform: rotate(200deg);}
+}
+
+// -------- Accounts -------- //
+
+.card {
+	padding: 30px;
+	border: 1px solid #e6e7e8;
+	border-radius: 5px;
+	h2 {
+		margin-top: 10px;
+	}
+	.icon {
+		margin: 40px 0px;
+		height: 60px;
+		
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
+	a {
+		display: block;
+	}
+	.button {
+		margin-top: 40px;
+		margin-bottom: 5px;
+		width: 55%; min-width: 200px;
+	}
+}
+
+.feature-one,
+.feature-two {
+	h3 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		max-width: 20em;
+	}
+	ul {
+		margin-bottom: 30px;
+	}
+}
+
+.feature-two {
+	p {
+		margin-bottom: 30px;
+	}
 }
