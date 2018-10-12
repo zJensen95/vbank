@@ -19,18 +19,24 @@
 <section class="blog-posts">
 	<div class="grid-container">
 		<div class="posts">
-			<div class="small-12 medium-6 large-4 cell sizing"></div>
-			<div class="post small-12 medium-6 large-4 cell">
-				<div class="bg-image" style="background-image: url('assets/images/thumb-1.png');"></div>
-				<div class="content">
-					<h4>To Rent or to Buy: Pros and Cons Every House Hunter Should Consider</h4>
+			<div class="grid-x grid-margin-x">
+			
+				{% set posts = craft.entries.section('blog').all() %}
+				{% for post in posts %}
+				<div class="post small-12 medium-6 large-4 cell">
+					{% if post.blogThumbnail.one() is not null %}
+					<div class="bg-image" style="background-image: url('{{ post.blogThumbnail.one().url }}');"></div>
+					{% endif %}
+					<div class="content">
+						<h3 class="lowercase">{{ post.title }}</h3>
+						<h4 class="grey">{{ post.datePosted|date('M d, Y') }}</h4>
+						{% set categories = post.blogCategory.all() %}
+						{% if categories|length %}
+						<h4>{% for category in categories %}{{ category.title }}{% endfor %}</h4>
+						{% endif %}
+					</div>
 				</div>
-			</div>
-			<div class="post small-12 medium-6 large-4 cell">
-				<div class="bg-image" style="background-image: url('assets/images/thumb-1.png');"></div>
-				<div class="content">
-					<h4>To Rent or to Buy: Pros and Cons Every House Hunter Should Consider</h4>
-				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
@@ -38,7 +44,6 @@
 
 {% js %}
 $('.posts').masonry({
-  columnWidth: '.sizing',
   itemSelector: '.post'
 });
 {% endjs %}

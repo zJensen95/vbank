@@ -1,0 +1,92 @@
+{% extends "_layout" %}
+{% block content %}
+
+<section class="banner help-banner">
+	<div class="grid-container">
+		<div class="grid-x align-center">
+			
+			<div class="small-12 medium-6 large-shrink cell text-center">
+				<h1>Need Some Help?</h1>
+				<p class="medium-width">We have a few resources to answer any questions you might have or reach out to us directly if you can’t find what you need.</p>
+				<div class="grid-x grid-margin-x">
+					<div class="shrink cell"><a class="button outline grey">Find an ATM</a></div>
+					<div class="shrink cell"><a class="button outline grey">Frequently Asked Questions</a></div>
+					<div class="shrink cell"><a class="button outline grey">Contact Us</a></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</section>
+
+<section class="no-padding find-an-atm">
+		<div class="grid-x">
+			
+			<div class="small-12 medium-6 large-3 cell atm-finder-form">
+				<h1>Find an ATM</h1>
+				<input class="green" placeholder="Zip Code" type="text" />
+				<input type="submit" value="Search" />
+			</div>
+			<div class="small-12 medium-6 large-9 cell">
+				<div class="responsive-embed widescreen">
+					<iframe src="https://snazzymaps.com/embed/104477" width="100%" height="600px" style="border:none;"></iframe>
+				</div>
+			</div>
+			
+		</div>
+</section>
+
+<section class="faqs">
+	<div class="grid-container">
+		<div class="grid-x align-center">
+			<img src="assets/images/grey-cloud-one.png" class="cloud-one" />
+			<img src="assets/images/grey-cloud-two.png" class="cloud-two" />
+			<img src="assets/images/grey-cloud-three.png" class="cloud-three" />
+			
+			
+			<div class="small-12 medium-6 cell">
+				<h2 class="text-center">Frequently Asked Questions</h2>
+				
+				<div class="faq" onclick="addRemoveActive(this)">
+					<div class="faq-header">
+						
+						<div class="grid-x align-middle align-justify">
+							<div class="shrink cell">
+								<p>Routing Number?</p>
+							</div>
+							<div class="auto cell text-right">
+								<img class="faq-arrow" src="assets/images/right-arrow.png" />
+							</div>
+						</div>
+						
+					</div>
+					<div class="faq-dropdown">
+						<p>12345678</p>
+					</div>
+				</div>
+				
+				<div class="faq" onclick="addRemoveActive(this)">
+					<div class="faq-header">
+						
+						<div class="grid-x align-middle align-justify">
+							<div class="shrink cell">
+								<p>I forgot my Personal Online Banking password. How do I reset it?</p>
+							</div>
+							<div class="auto cell text-right">
+								<img class="faq-arrow" src="assets/images/right-arrow.png" />
+							</div>
+						</div>
+						
+					</div>
+					<div class="faq-dropdown">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices elementum rhoncus. Proin lobortis erat metus, ut dictum mauris dapibus vel. Nam eget finibus leo. Nunc scelerisque metus vel mollis ornare.</p>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+</section>
+
+{% endblock %}

@@ -25,13 +25,43 @@
 
 </head>
 <body>
+	<!--
+	<section class="menu-opener">
+		<img src="assets/icons/building-one.png" class="building-one" />
+		<img src="assets/icons/building-two.png" class="building-two" />
+		<img src="assets/icons/building-three.png" class="building-three" />
+	</section>
+	-->
+	<menu>
+		<div class="grid-y grid-margin-y align-left align-center">
+			<div class="shrink cell">
+				<a href="{{ siteUrl }}accounts">Accounts</a>
+			</div>
+			<div class="shrink cell">
+				<a href="{{ siteUrl }}blog">Blog</a>
+			</div>
+			<div class="shrink cell">
+				<a href="{{ siteUrl }}about">About</a>
+			</div>
+			<div class="shrink cell">
+				<a href="{{ siteUrl }}help">Help</a>
+			</div>
+		</div>
+	</menu>
 	{% if entry.slug != "login" %}
 	<header>
-		<div class="grid-x align-justify">
+		<div class="grid-x align-justify align-middle">
 			<div class="shrink cell">
-				<img class="logo" src="assets/icons/logo.svg" />
+				<a href="{{ siteUrl }}">
+					<img class="logo" src="assets/icons/logo.svg" />
+				</a>
 			</div>
-			<div class="auto cell">
+			<div class="auto cell text-right hide-for-medium ">
+				<div class="hamburger" id="hamburger">
+					<img src="assets/icons/hamburger.png" />
+				</div>
+			</div>
+			<div class="auto cell hide-for-small show-for-medium medium-text-right large-text-left">
 				<a href="{{ siteUrl }}accounts">Accounts</a>
 				<a href="{{ siteUrl }}blog">Blog</a>
 				<a href="{{ siteUrl }}about">About</a>
