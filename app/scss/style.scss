@@ -951,6 +951,7 @@ footer {
 	margin-bottom: 30px;
 	
 	.faq-dropdown {
+		margin-top: 5px;
 		max-height: 0px;
 		overflow: hidden;
 		
@@ -969,4 +970,24 @@ footer {
 		}
 	}
 	
+}
+
+@media (max-width: 1024px) {
+	.atm-finder-form {
+		margin-top: 50px;
+	}
+	.faqs {
+		.cloud-one {
+			top: 2%;
+			left: 5%;
+		}
+		.cloud-two {
+			top: 13%;
+			left: -20px;
+		}
+		.cloud-three {
+			top: 4%;
+			right: -5%;
+		}
+	}
 }

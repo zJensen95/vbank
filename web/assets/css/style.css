@@ -757,6 +757,7 @@ footer {
 .faq {
   margin-bottom: 30px; }
   .faq .faq-dropdown {
+    margin-top: 5px;
     max-height: 0px;
     overflow: hidden;
     transition: height .4s ease-out; }
@@ -766,5 +767,18 @@ footer {
     max-height: 10000px; }
   .faq.is-active .faq-arrow {
     transform: rotate(90deg); }
+
+@media (max-width: 1024px) {
+  .atm-finder-form {
+    margin-top: 50px; }
+  .faqs .cloud-one {
+    top: 2%;
+    left: 5%; }
+  .faqs .cloud-two {
+    top: 13%;
+    left: -20px; }
+  .faqs .cloud-three {
+    top: 4%;
+    right: -5%; } }
 
 /*# sourceMappingURL=style.css.map */
