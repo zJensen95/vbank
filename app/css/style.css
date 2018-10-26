@@ -8,11 +8,11 @@
 @import url(foundation.min.css);
 @media (max-width: 1024px) {
   html {
-    font-size: 80%; } }
+    font-size: 89%; } }
 
 @media (max-width: 640px) {
   html {
-    font-size: 70%; } }
+    font-size: 80%; } }
 
 /*
 	
@@ -55,20 +55,20 @@ h4 {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.8em;
-  letter-spacing: .086em; }
+  letter-spacing: .06em; }
 
 p, ul, a, .button, input[type="submit"], input[type='text']:-ms-input-placeholder {
   font-family: "futura";
   font-size: 1rem;
   font-weight: 400;
-  line-height: 2em;
+  line-height: 1.6em;
   letter-spacing: .086em; }
 
 p, ul, a, .button, input[type="submit"], input[type='text']::placeholder {
   font-family: "futura";
   font-size: 1rem;
   font-weight: 400;
-  line-height: 2em;
+  line-height: 1.6em;
   letter-spacing: .086em; }
 
 h1, h2, h3, h4, h5, h6, p, ul, a, .button, input[type="submit"], input[type='text']:-ms-input-placeholder {
@@ -120,10 +120,12 @@ h1, h2, h3, h4, h5, h6, p, ul, a, .button, input[type="submit"], input[type='tex
     max-width: 26em; }
 
 ul {
-  list-style-type: none; }
+  list-style-type: none;
+  line-height: 1.4em; }
   ul li {
     position: relative;
-    margin-left: 25px; }
+    margin-left: 25px;
+    margin-bottom: 10px; }
     ul li:before {
       position: absolute;
       left: -25px;
@@ -212,6 +214,9 @@ section {
   max-width: 34em;
   margin: 0 auto; }
 
+.no-margin {
+  margin: 0px !important; }
+
 @media (max-width: 1024px) {
   .line-after:after {
     width: 50%; } }
@@ -229,7 +234,10 @@ section {
   padding-bottom: 45%; }
 
 a {
-  color: #000; }
+  color: #000;
+  transition: all .2 ease-out; }
+  a:hover {
+    color: #444; }
 
 .button {
   position: relative;
@@ -288,6 +296,10 @@ a {
           box-shadow: inset 0 0 0 35px #666; }
       .button.outline:hover:after {
         box-shadow: inset 0 0 0 35px #82ce20; }
+
+@media (max-width: 640px) {
+  .button {
+    padding: 15px 30px; } }
 
 input[type="submit"] {
   background: #82ce20;
@@ -352,51 +364,79 @@ menu {
 
 .menu-opener {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: #fff;
-  z-index: 100; }
+  z-index: 100;
+  overflow: hidden;
+  transform: scaleY(0);
+  transition: transform .3s ease-out;
+  transform-origin: top; }
   .menu-opener .building-one {
+    display: none;
     position: absolute;
-    left: 50%;
-    bottom: 0; }
+    right: 5%;
+    bottom: 0;
+    transform: translateY(350px);
+    transform-origin: center; }
   .menu-opener .building-two {
+    display: none;
     position: absolute;
     left: 10%;
     bottom: 0;
-    animation-name: build-two;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    transform: translate(50px, 350px); }
+    transform: translateY(350px); }
   .menu-opener .building-three {
+    display: none;
     position: absolute;
     left: 0;
     bottom: -10px;
-    animation-name: build-one;
-    animation-duration: 2.5s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    transform: scale(1, 1) translate(20px, 200px) rotate(20deg);
+    transform: translateY(350px);
     transform-origin: center; }
+  .menu-opener.is-active {
+    max-height: 1000px;
+    overflow: visible;
+    transform: scaleY(1);
+    transform-origin: bottom; }
+    .menu-opener.is-active.opening-one .building-one {
+      display: block;
+      animation-name: build-one;
+      animation-duration: 2.5s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1;
+      animation-delay: .3s; }
+    .menu-opener.is-active.opening-one .building-two {
+      display: block;
+      animation-name: build-two;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1; }
+    .menu-opener.is-active.opening-one .building-three {
+      display: block;
+      animation-name: build-one;
+      animation-duration: 2.5s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1; }
 
 @keyframes build-one {
   0% {
-    transform: translate(20px, 350px); }
+    transform: translateY(350px); }
   50% {
-    transform: translate(0px, 20px); }
+    transform: translateY(20px); }
   100% {
-    transform: translate(-20px, 350px); } }
+    transform: translateY(350px); } }
 
 @keyframes build-two {
   0% {
-    transform: translate(50px, 350px); }
+    transform: translateY(350px); }
   50% {
-    transform: translate(25px, 0px); }
+    transform: translateY(0px); }
   100% {
-    transform: translate(0px, 350px); } }
+    transform: translateY(350px); } }
+
+.header-spacer {
+  height: 72px; }
 
 header {
   position: relative;
@@ -412,7 +452,7 @@ header {
     cursor: pointer;
     display: inline-block;
     width: 30px;
-    margin-right: 5vw; }
+    margin-left: 5vw; }
 
 @media (max-width: 1024px) {
   header {
@@ -422,10 +462,17 @@ header {
       margin-right: 5vw; } }
 
 @media (max-width: 640px) {
-  header .button {
-    min-width: 0px; }
-  header .logo {
-    width: 80px; } }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 100%; }
+    header .button {
+      min-width: 0px;
+      padding: 10px 30px; }
+    header .logo {
+      width: 100px; } }
 
 footer {
   background: #82ce20;
@@ -465,8 +512,15 @@ footer {
     margin-bottom: 120px; } }
 
 @media (max-width: 640px) {
+  .homepage-accounts .item {
+    max-width: none;
+    margin-bottom: 30px; }
+    .homepage-accounts .item h4 {
+      font-size: 1.2rem; }
   .homepage-banner img {
-    margin-bottom: 80px; } }
+    margin-bottom: 80px; }
+  .homepage-banner a {
+    padding-bottom: 15px !important; } }
 
 .about-banner h1 {
   margin-bottom: 50px; }
@@ -658,6 +712,8 @@ footer {
   padding: 30px;
   border: 1px solid #e6e7e8;
   border-radius: 5px; }
+  .card .grid-y {
+    height: 100%; }
   .card h2 {
     margin-top: 10px; }
   .card .icon {
@@ -672,7 +728,16 @@ footer {
     margin-top: 40px;
     margin-bottom: 5px;
     width: 55%;
-    min-width: 200px; }
+    min-width: 155px;
+    max-width: 100%; }
+
+@media (max-width: 640px) {
+  .card {
+    margin-bottom: 20px; }
+    .card .icon {
+      margin: 30px 0px; }
+    .card .button {
+      margin-top: 0px; } }
 
 .feature-one h3,
 .feature-two h3 {
@@ -699,13 +764,15 @@ footer {
   .accounts-questions .card-one {
     position: absolute;
     top: 0%;
-    right: 10%;
+    right: 2%;
     z-index: -1;
+    width: 28vw;
     transform: translateY(-55%); }
   .accounts-questions .card-two {
     position: absolute;
     top: 0%;
-    left: 10%;
+    left: 2%;
+    width: 25vw;
     transform: translateY(-75%); }
   .accounts-questions h2 {
     margin-bottom: 20px; }
