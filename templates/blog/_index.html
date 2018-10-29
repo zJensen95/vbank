@@ -16,11 +16,25 @@
 	</div>
 </section>
 
-<section class="blog-posts">
+<div class="grid-container blog-search">
+	<div class="grid-x grid-margin-x align-middle">
+		<div class="medium-auto small-12 cell">
+			<input type="text" placeholder="Search..." />
+		</div>
+		<div class="medium-4 small-12 cell">
+			<input type="text" placeholder="All Categories" />
+		</div>
+		<div class="shrink cell">
+			<a class="button outline">Search</a>
+		</div>
+	</div>
+</div>
+<section class="blog-posts no-padding">
 	<div class="grid-container">
 		<div class="posts">
 			<div class="grid-x grid-margin-x">
 			
+				{% set counter = 1 %}
 				{% set posts = craft.entries.section('blog').all() %}
 				{% for post in posts %}
 				<div class="post small-12 medium-6 large-4 cell">
@@ -30,14 +44,20 @@
 					{% endif %}
 					<div class="content">
 						<h3 class="lowercase">{{ post.title }}</h3>
+						<div class="line-full"></div>
 						<h4 class="grey">{{ post.datePosted|date('M d, Y') }}</h4>
 						{% set categories = post.blogCategory.all() %}
 						{% if categories|length %}
-						<h4>{% for category in categories %}{{ category.title }}{% endfor %}</h4>
+						<h4 class="light-grey">{% for category in categories %}{{ category.title }}{% endfor %}</h4>
 						{% endif %}
 					</div>
 					</a>
 				</div>
+				{% if counter != 3 %}
+					{% set counter = counter + 1 %}
+				{% else %}
+					{% set counter = 1 %}
+				{% endif %}
 				{% endfor %}
 			</div>
 		</div>
